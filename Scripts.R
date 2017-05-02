@@ -60,6 +60,7 @@ genome<-'hg19'
 #CreateffFiles
 outdir<-paste(datadir,"ff_files",sep="/")
 outdir<-paste(outdir,Sample,sep="_")
+#Create Directory so as to save ff files
 dir.create(outdir,recursive=TRUE,showWarnings=FALSE)
 ldPath(outdir)
 #ReadSamples
@@ -174,6 +175,7 @@ exp<-function(cnReSet,mychr,mysample){ marker.index <- which(chromosome(cnReSet)
   Export<-str_replace(Export,"|","_")
   Export<-str_replace(Export,'"',"_")
   Result<-paste(datadir,"Resultats",sep="/")
+  #Create Directory "Resultats" so as to save datas
   dir.create(Result,recursive=TRUE,showWarnings=FALSE)     
   setwd(Result)
   #Export BAF/CNV TSV format
@@ -280,6 +282,7 @@ setwd(datadir)
 #Select different family and number of family
 Group<-read.table(Family,header=T,sep="\t")
 images<-paste(datadir,"images",sep="/")
+#Create Directory so as to save images
 dir.create(images,recursive=TRUE,showWarnings=FALSE)
 setwd(images)
 compt<-levels(Group$Patient)
@@ -306,6 +309,7 @@ borne<-nlevels(Group$Patient)
     Echant<-str_replace(Echant,'"',"_")
     name<-paste(Echant,"pdf",sep=".")
     lieu<-paste(images,Echant,sep="/")
+    #Create Directory so as to save images for each family
     dir.create(lieu,recursive=TRUE,showWarnings=FALSE)
     setwd(lieu)
     #Plot
