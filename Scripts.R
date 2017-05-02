@@ -26,7 +26,7 @@ library(grid)
 ###################################################################################
 
 
-setwd("C:/Users/Sylvie/Desktop/ValentinFC/Data/projetNantes_aout/ScanData/200724340050")
+setwd("XXX")
 datadir<-getwd()
 
 
@@ -34,20 +34,20 @@ datadir<-getwd()
 ##Name of the Samplesheet link (read .idat files further)##
 ###########################################################
 
-Sample<-"PJ1606169-Gaignerie-HC24.csv"
+Sample<-"XXX"
 
 ###############################################################################
 ##For each cell,patient (family) and typeCell (Parental/hiPSC) in tsv format ##
 ###############################################################################
 
-Family<-"format.txt"
+Family<-"XXX.txt"
 
 
 ###############################################################################################################
 ##For annotation, put the Manifest link(csv) with ";" as field separator & release control section at the end##
 ###############################################################################################################
 
-manifest<-"humancore-24-v1-0-manifest-file-a.csv"
+manifest<-"XXX.csv"
 genome<-'hg19'
 
 
@@ -234,7 +234,7 @@ exp<-function(cnReSet,mychr,mysample){ marker.index <- which(chromosome(cnReSet)
           }
           if(warmi>bar&memo==0){
             #We save the Chromosome with duplication
-            coucou<-paste(paste("Attention, il y a une diminution de la BAF sur le génome et chromosome : ",(samplesheet$Sample_ID[mysample]),mychro,sep="/"))
+            coucou<-paste(paste("Attention, il y a une diminution de la BAF sur le gÃ©nome et chromosome : ",(samplesheet$Sample_ID[mysample]),mychro,sep="/"))
             warning(paste(coucou))
             memo<-1
             value<-mychr
@@ -251,7 +251,7 @@ exp<-function(cnReSet,mychr,mysample){ marker.index <- which(chromosome(cnReSet)
           }
           if(warma>bar&memo==0){
             #We save the Chromosome with duplication
-            coucou<-paste(paste("Attention, il y a une augmentation de la BAF sur le génome et chromosome : ",(samplesheet$Sample_ID[mysample]),mychro,sep=" / "))
+            coucou<-paste(paste("Attention, il y a une augmentation de la BAF sur le gÃ©nome et chromosome : ",(samplesheet$Sample_ID[mysample]),mychro,sep=" / "))
             warning(paste(coucou))
             memo<-1
             value<-mychr
@@ -260,7 +260,7 @@ exp<-function(cnReSet,mychr,mysample){ marker.index <- which(chromosome(cnReSet)
       }
       #Check if we have deletion of chromsome and save it
       if(((length(del$x))/length(res$x))<0.17){
-        coucou<-paste(paste("Attention, il y a une délétion sur le génome et chromosome : ",(samplesheet$Sample_ID[mysample]),mychro,sep=" / "))
+        coucou<-paste(paste("Attention, il y a une dÃ©lÃ©tion sur le gÃ©nome et chromosome : ",(samplesheet$Sample_ID[mysample]),mychro,sep=" / "))
         warning(paste(coucou))
         value<-mychr
       }
